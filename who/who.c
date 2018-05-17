@@ -1,8 +1,9 @@
 /*
 step1: man who     # Know who uses struct utmp
 step2: man -k utmp # search utmp manual
-step3: man utmp    # learn its structure
-step4: Write your own who command!
+step3: man utmp    # learn its structure, in see also, find related functions
+step4: man getutent
+step5: Write your own who command!
 */
 
 /* who -- show users currently logged in
@@ -23,37 +24,32 @@ step4: Write your own who command!
 void show_info();
 int main()
 {
-    struct utmp current_record;
-    int    utmpfd;
-    int    reclen = sizeof(current_record);
-    printf("size of reclen = %d\n",reclen);
-
-    if( (utmpfd = open("/var/run/utmp",O_RDONLY) == -1) )
+    struct utmp * current_record;
+    setutent();
+    while((current_record = getutent())!=NULL)
     {
-        perror("/var/run/utmp");
-        exit(1);
+        if(current_record->ut_type != USER_PROCESS) // only display user process
+            continue;
+        show_info(current_record);
     }
-    printf("open utmp successfully...\n");
-    while(read(utmpfd, &current_record, reclen) == reclen)
-    {
-	printf("begin reading...\n");
-        show_info(&current_record);
-    }
-    close(utmpfd);
+    endutent();
     return 0;
 }
 
+
 void show_info(struct utmp * u)
 {
-    printf("%-8.8s",u->ut_name);
+    printf("%-8.8s",u->ut_user); // Username
     printf(" ");
-    printf("%-8.8s",u->ut_line);
+    printf("%-8.8s",u->ut_line); // Device name of tty
     printf(" ");
     printf("%-8d",u->ut_tv.tv_sec); // ut_time
     printf(" ");
 #ifdef SHOWHOST
-    printf("%-8d",*(u->ut_addr_v6));
+    printf("%-8s",u->ut_host); // host name for remote login
     printf(" ");
 #endif
     printf("\n");
 }
+
+
