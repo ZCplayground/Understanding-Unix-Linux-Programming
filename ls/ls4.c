@@ -78,8 +78,8 @@ void show_file_info(char * pathname, struct stat * buf)
 
     printf("%-11s", modestr);
     printf(" %3ld ", buf->st_nlink);
-    printf("%s ", uid_to_name(buf->st_uid));
-    printf("%s ", gid_to_name(buf->st_gid));
+    printf("%6s ", uid_to_name(buf->st_uid));
+    printf("%6s ", gid_to_name(buf->st_gid));
     printf("%10ld  ", buf->st_size);
     printf("%.12s", 4 + ctime(&buf->st_mtime));
     // printf(" %s\n", filename); bug!
