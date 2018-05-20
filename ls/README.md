@@ -14,10 +14,10 @@ an unformatted text but contains a certain data structure.
 
 # Learn how to program ls command:
 
-step1: man -k direct | grep read  # learn how to read dir file
-step2: read mannul of readdir and get other information.
-step3: learn about opendir/readdir/closedir/dirent.h and so on.
-step4: Write your own ls command!
+1. man -k direct | grep read  # learn how to read dir file
+2. read mannul of readdir and get other information.
+3. learn about opendir/readdir/closedir/dirent.h and so on.
+4. Write your own ls command!
 
 ~~~
     open directory
