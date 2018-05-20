@@ -64,11 +64,3 @@ int see_more()
     }
     return 0;
 }
-
-
-/* to be complete:
-1. how to remove 'more?' in the bottom of each output?
-2. how to get next output without enter after input q SPACE or ENTER?
-3. how to calculate the percentage?
-4. to get input from file stream.
-*/

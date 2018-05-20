@@ -5,8 +5,9 @@
 | +--> if Enter, advance next page
 + ---- if Space, advance one line
        if q --> exit
-
 */
+
+/*fix bug: Redirect file input*/
 #include<stdio.h>
 #include<stdlib.h>
 #define PAGELEN 24
@@ -68,3 +69,11 @@ int see_more(FILE *cmd)
     }
     return 0;
 }
+
+/* to be complete:
+1. how to remove 'more?' in the bottom of each output?
+2. how to get next output without enter after input q SPACE or ENTER?
+3. how to calculate the percentage?
+4. to get input from file stream.
+*/
+
