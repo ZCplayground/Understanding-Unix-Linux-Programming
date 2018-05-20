@@ -70,4 +70,20 @@ The kernel sets an i-node in each directory pointing to its parent dir, called "
 
 # Related System Call
 
-mkdir, rmdir, rm, ln, mv, cd
+mkdir, rmdir, rm, ln, mv, cd, chdir
+
+
+Use man to learn them.
+
+# A easy API
+
+See `easy-to-get-pwd.c`
+
+# A complete workflow of pwd
+
+1. Tracing up from the current directory and continuing into the parent directory.
+2. Each time you enter the parent directory, check the inode number of "."
+3. And store the name of the inode in the struct `dirent` of the parent directory.
+4. Until it reaches the root `/`
+
+See `pwd.c`
