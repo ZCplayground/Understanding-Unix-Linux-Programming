@@ -177,7 +177,17 @@ isig icanon iexten echo echoe echok -echonl -noflsh -xcase -tostop -echoprt
 echoctl echoke
 ~~~
 
-Some settings have int values(`rows`, `columns`, `line`. By the way, this attributes can be used for more function in our own `more` function. It's insteresting, right?) and some other have bool value. For example `icrnl` means convert Carriage Return to NewLine. `-olcuc` means convert LowerCase to UpperCase. A minus sign before an attribute indicates that the attribute is turned off.
+Some settings have int values(`rows`, `columns`, `line`. By the way, this attributes can be used for more functions in our own `more` command. It's insteresting, right?) and some other have bool value. For example `icrnl` means convert Carriage Return to NewLine. `-olcuc` means convert LowerCase to UpperCase. A minus sign before an attribute indicates that the attribute is turned off.
+
+
+You can try these command:
+
+~~~
+$ stty erase X
+$ stty  -echo
+~~~
+
+You can change the delete button to any desired button. You can make the input on the terminal not be echoed, which can protect it when you enter the password.
 
 Now can we make our own version of `stty`?
 
