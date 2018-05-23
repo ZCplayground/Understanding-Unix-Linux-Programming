@@ -199,3 +199,15 @@ Now can we make our own version of `stty`?
 $ man -k "terminal attributes"
 ~~~
 
+See `echostate.c` and `setecho.c`
+
+# Conclusion
+
+The source or destination of any data is considered by Unix as a file. 
+
+1. Device is somewhat like file. System calls are useful for both disk file and character device.
+2. The difference between file and device. What makes them different is the connection. `<file | dir | char device>` In i-node mode.
+
+Use `stty` to see or set attributes of device.
+
+The fd(file descriptor) of disk file contains cache attributes. Terminal's fd contains many attrbutes definition code, such as echo, character conversion, etc.
