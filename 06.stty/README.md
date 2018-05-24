@@ -76,7 +76,7 @@ We can examine how the system call `read` works. The kernel finds i-node of file
 
 # The difference between them..
 
-The system call `open` create a connection from file to device. The connection of disk file is different from the connection of device. Disk file need cache in kernel. Terminal doesn't need cache, contrastly it needs to send data as fast as possible.
+The system call `open` create a connection from file to device. The connection of disk file is different from the connection of device. Disk file need cache in kernel. Terminal doesn't need cache, in contrast, it needs to send data as fast as possible.
 
 About connection's properties:
 
