@@ -27,6 +27,8 @@ All these infomation is in `man -k "terminal attrbutes"`
 
 3. **Raw mode**: input is available character by character, echoing is disabled, and all special processing of terminal input and output characters is disabled.
 
+See `more04.c`, use `tcgetattr()` and `tcsetattr()` to make this program noncanonial mode.
+
 # Signal(to ignore Ctrl+C)
 
 Our program has 3 steps when we set terminal attributes.
@@ -85,3 +87,4 @@ See `youcantstopme.c`
 1. Understand the properties of the device. `stty`
 2. Learn how to control the connection, how to adjust driver properties to meet specific needs. `tcgetattr` and `tcsetattr`
 3. Learn how to deal with signals.
+
