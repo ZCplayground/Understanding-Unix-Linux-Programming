@@ -71,3 +71,9 @@ If  pshared is `nonzero`, then the semaphore is shared between processes, and `s
 
 RETURN VALUE
        sem_init() returns 0 on success; on error, -1 is returned,
+
+# Link 
+
+gcc -pthread PC.c -o PC
+
+`-pthread` option is necessary because it is not default. See manual.
