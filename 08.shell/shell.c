@@ -99,7 +99,7 @@ void execute(int argc, char * arglist[])
 {
 	int i;
 	for(i = 0; i < argc; i++)
-		printf("arg[%d]: %s, ", i, arglist[i]);
+		printf("arg[%d]: %s\t", i, arglist[i]);
 	printf("\n");
 	int pid, exitstatus;
 
