@@ -76,7 +76,7 @@ void init()
 
     sem_init(mutexP, 1, 1);
     sem_init(mutexC, 1, 1);
-    sem_init(empty, 1, 5);
+    sem_init(empty, 1, k);
     sem_init(product, 1, 0);
 }
 
@@ -95,7 +95,7 @@ void Producer()
     sem_post(product); // P puts a product for C to take away
 
     int posi = i + 1;
-    printf("ProducerID: %d puts an product to %d\n", getpid(), posi);
+    printf("ProducerID: %d puts an product to position %d\n", getpid(), posi);
 
     return;
 }
